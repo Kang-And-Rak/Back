@@ -1,2 +1,9 @@
-package KangRak.board.dto;public class UserLoginDto {
+package KangRak.board.dto;
+
+import lombok.Data;
+
+@Data
+public class UserLoginDto {
+    private String email;
+    private String password;
 }

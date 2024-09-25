@@ -1,2 +1,5 @@
-package KangRak.board.dto;public class PostDto {
+package KangRak.board.dto;
+
+public class PostDto {
+
 }

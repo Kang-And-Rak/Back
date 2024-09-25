@@ -1,2 +1,9 @@
-package KangRak.board.service;public class MypageService {
+package KangRak.board.service;
+
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
+@AllArgsConstructor
+public class MypageService {
 }

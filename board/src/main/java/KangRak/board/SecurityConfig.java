@@ -55,7 +55,7 @@ public class SecurityConfig {
 
         http
                 .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers( "/","/register","/login","/error").permitAll() // 모든 사용자에게 접근 허용
+                        .requestMatchers( "/swagger-ui/**","/v3/api-docs/**","/","/register","/login","/error").permitAll() // 모든 사용자에게 접근 허용
                         .requestMatchers("/admin" , "/post").hasRole("ADMIN")
                         .anyRequest().authenticated());
 
