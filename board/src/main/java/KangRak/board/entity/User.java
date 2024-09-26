@@ -1,6 +1,6 @@
 package KangRak.board.entity;
 
-import KangRak.board.dto.UserRegistDto;
+import KangRak.board.dto.User.UserRegistDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

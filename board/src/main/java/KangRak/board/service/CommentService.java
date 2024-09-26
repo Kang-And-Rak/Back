@@ -1,7 +1,7 @@
 package KangRak.board.service;
 
-import KangRak.board.dto.CommentResponseDto;
-import KangRak.board.dto.CommentResquestDto;
+import KangRak.board.dto.Comment.CommentResponseDto;
+import KangRak.board.dto.Comment.CommentResquestDto;
 import KangRak.board.entity.Comment;
 import KangRak.board.entity.Post;
 import KangRak.board.entity.User;
@@ -9,7 +9,6 @@ import KangRak.board.repository.CommentRepository;
 import KangRak.board.repository.PostRepository;
 import KangRak.board.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 

@@ -13,4 +13,6 @@ public interface CommentRepository extends JpaRepository<Comment, Integer> {
     // 특정 Post의 모든 댓글을 조회하는 메서드
     List<Comment> findByPost(Post post);
 
+    Integer countByUserId(Integer userId);
+
 }

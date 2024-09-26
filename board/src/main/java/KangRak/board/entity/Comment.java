@@ -1,12 +1,10 @@
 package KangRak.board.entity;
 
-import KangRak.board.dto.CommentResponseDto;
-import KangRak.board.dto.CommentResquestDto;
+import KangRak.board.dto.Comment.CommentResquestDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Entity
 @Table(name = "comment")

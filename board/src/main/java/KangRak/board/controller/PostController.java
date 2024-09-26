@@ -2,11 +2,12 @@ package KangRak.board.controller;
 
 
 import KangRak.board.dto.*;
-import KangRak.board.entity.Post;
-import KangRak.board.service.CommentService;
+import KangRak.board.dto.Post.AllPostDto;
+import KangRak.board.dto.Post.PostDetailDto;
+import KangRak.board.dto.Post.PostRequestDto;
+import KangRak.board.dto.Post.PostResponseDto;
 import KangRak.board.service.PostService;
 import lombok.AllArgsConstructor;
-import org.springframework.data.relational.core.sql.In;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;

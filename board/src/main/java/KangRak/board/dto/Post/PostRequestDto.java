@@ -1,4 +1,4 @@
-package KangRak.board.dto;
+package KangRak.board.dto.Post;
 
 import KangRak.board.entity.BaseEntity;
 import lombok.Data;

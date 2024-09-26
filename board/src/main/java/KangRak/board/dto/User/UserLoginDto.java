@@ -1,4 +1,4 @@
-package KangRak.board.dto;
+package KangRak.board.dto.User;
 
 import lombok.Data;
 

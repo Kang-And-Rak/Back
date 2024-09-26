@@ -1,4 +1,4 @@
-package KangRak.board.dto;
+package KangRak.board.dto.Comment;
 
 import KangRak.board.entity.Comment;
 import lombok.AllArgsConstructor;

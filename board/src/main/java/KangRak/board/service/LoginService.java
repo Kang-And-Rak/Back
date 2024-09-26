@@ -1,7 +1,6 @@
 package KangRak.board.service;
 
-import KangRak.board.dto.UserLoginDto;
-import KangRak.board.dto.UserRegistDto;
+import KangRak.board.dto.User.UserRegistDto;
 import KangRak.board.entity.User;
 import KangRak.board.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -9,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 @AllArgsConstructor

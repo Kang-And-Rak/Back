@@ -1,9 +1,8 @@
-package KangRak.board.dto;
+package KangRak.board.dto.Comment;
 
 import KangRak.board.entity.Comment;
 import lombok.Data;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data

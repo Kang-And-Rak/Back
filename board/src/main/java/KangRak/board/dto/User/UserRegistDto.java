@@ -1,4 +1,4 @@
-package KangRak.board.dto;
+package KangRak.board.dto.User;
 
 import KangRak.board.entity.UserStatus;
 import jakarta.persistence.EnumType;

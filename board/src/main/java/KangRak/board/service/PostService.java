@@ -1,6 +1,10 @@
 package KangRak.board.service;
 
-import KangRak.board.dto.*;
+import KangRak.board.dto.Comment.CommentDetailDto;
+import KangRak.board.dto.Post.AllPostDto;
+import KangRak.board.dto.Post.PostDetailDto;
+import KangRak.board.dto.Post.PostRequestDto;
+import KangRak.board.dto.Post.PostResponseDto;
 import KangRak.board.entity.Comment;
 import KangRak.board.entity.LikePost;
 import KangRak.board.entity.Post;

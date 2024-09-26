@@ -1,13 +1,12 @@
 package KangRak.board.controller;
 
-import KangRak.board.dto.CommentResponseDto;
-import KangRak.board.dto.CommentResquestDto;
+import KangRak.board.dto.Comment.CommentResponseDto;
+import KangRak.board.dto.Comment.CommentResquestDto;
 import KangRak.board.dto.CustomUserDetails;
 import KangRak.board.service.CommentService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

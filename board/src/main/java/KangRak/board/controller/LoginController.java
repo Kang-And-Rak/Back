@@ -1,7 +1,6 @@
 package KangRak.board.controller;
 
-import KangRak.board.dto.UserLoginDto;
-import KangRak.board.dto.UserRegistDto;
+import KangRak.board.dto.User.UserRegistDto;
 import KangRak.board.service.LoginService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
