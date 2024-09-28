@@ -30,6 +30,4 @@ public class LoginService {
 
         return new ResponseEntity<>("User registered successfully", HttpStatus.CREATED);
     }
-
-
 }

@@ -1,7 +1,9 @@
 package KangRak.board.jwt;
 
 import KangRak.board.dto.CustomUserDetails;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletInputStream;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,12 +13,19 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Map;
+
+
 
 public class LoginFilter extends UsernamePasswordAuthenticationFilter {
     private final AuthenticationManager authenticationManager;
     private final JWTUtil jwtUtil;
+
+    // JSON 요청 파싱을 위한 ObjectMapper 선언
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     public LoginFilter(AuthenticationManager authenticationManager, JWTUtil jwtUtil) {
         this.authenticationManager = authenticationManager;
@@ -26,17 +35,27 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
 
-        String email = request.getParameter("email");
-        String password = obtainPassword(request);
+        try {
+            ServletInputStream inputStream = request.getInputStream();
+            Map<String, String> requestBody = objectMapper.readValue(inputStream, Map.class);
 
-        System.out.println("email = " +email);
-        System.out.println("password = " +password);
+            // JSON 데이터에서 이메일과 비밀번호 추출
+            String email = requestBody.get("email");
+            String password = requestBody.get("password");
 
-        // token에 email, password를 넣은 후에 authenticationManager한테 전달하는 형태
-        UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(email,password);
+            System.out.println("email = " + email);
+            System.out.println("password = " + password);
 
-        // token 검증을 위한 절차
-        return authenticationManager.authenticate(authToken);
+            // 토큰 생성 및 인증 요청
+            UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(email, password);
+
+            // token 검증을 위한 절차
+            return authenticationManager.authenticate(authToken);
+                    // getAuthenticationManager().authenticate(authToken);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new AuthenticationException("Failed to parse authentication request body") {};
+        }
 
         // UsernamePasswordAuthenticationToken [
                 // Principal=KangRak.board.dto.CustomUserDetails@2e444178,
